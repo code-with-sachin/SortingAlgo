@@ -11,7 +11,10 @@ public class SelectionSort {
         }
 
         System.out.println(Arrays.toString(numbers));
+        long startTime = System.currentTimeMillis();
         selectionSort(numbers);
+        long endTime = System.currentTimeMillis();
+        System.out.println("Took " +(endTime-startTime) + "ms" );
         System.out.println(Arrays.toString(numbers));
     }
 
