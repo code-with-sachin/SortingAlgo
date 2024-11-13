@@ -26,13 +26,19 @@ public class QuickSort {
 
         System.out.println("Array before sorting:" + Arrays.toString(numbers));
 
-        quickSort(numbers, 0, numbers.length-1);
+       // quickSort(numbers, 0, numbers.length-1);
+        quickSort(numbers);
 
         System.out.println("Array after sorting:" + Arrays.toString(numbers));
 //        System.out.println("Array after sorting:");
 //        printArray(numbers);
 
 
+    }
+
+    //Overloading quicksort method
+    private static void quickSort(int[] array) {
+        quickSort(array, 0, array.length-1);
     }
 
     private static void quickSort(int[] array, int lowIndex, int highIndex) {
