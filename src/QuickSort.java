@@ -40,7 +40,13 @@ public class QuickSort {
         if (lowIndex >= highIndex){
             return;
         }
-        int pivot = array[highIndex];       // highIndex = array.length-1
+
+        //optimizing the code by choosing pivot randomly - so quick sort perform little faster
+        int pivotIndex = new Random().nextInt(highIndex - lowIndex) + lowIndex;
+        int pivot = array[pivotIndex];
+        swap(array, pivotIndex, highIndex);     //swap random pivot with last element of the array
+
+       // int pivot = array[highIndex];       // highIndex = array.length-1
         //partitioning step         1 8 3 9 4 5 7
         // we will create two variables which will be the pointers
 
