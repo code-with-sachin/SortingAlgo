@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class BinarySearch {
     //To check if given value exists in Array or NOT
     //Binary search is much  faster for sorted arrays -> So array has to be sorted for binary search
@@ -8,8 +10,13 @@ public class BinarySearch {
 
         int[] nums = {1, 3, 4, 5, 7, 9, 11};
 
-        int ans = binarySearch(nums, 5);
+        int ans = binarySearch(nums, 11);
         System.out.println("The index of number we are searching is " +ans);
+
+        //Binary search using java's built in library in just one line of code
+        int answer = Arrays.binarySearch(nums, 11);
+        System.out.println("Binary search using java's build in library :" +answer);
+        //System.out.println(Arrays.binarySearch(nums,11));
 
     }
 
