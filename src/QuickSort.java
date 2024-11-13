@@ -44,6 +44,18 @@ public class QuickSort {
         //partitioning step         1 8 3 9 4 5 7
         // we will create two variables which will be the pointers
 
+        int leftPointer = partition(array, lowIndex, highIndex, pivot);
+        //After above step all the numbers which are lower than pivot are on the left and higher ones are on the right of pivot
+
+        //Then we are just remaining with recursive step to left & right of pivot
+        //recursive quicksort left partition
+        quickSort(array, lowIndex, leftPointer-1);      // cause leftpointer & rightpointer is at pivot right now
+
+        //recursive quicksort right partition
+        quickSort(array, leftPointer+1, highIndex);
+    }
+
+    private static int partition(int[] array, int lowIndex, int highIndex, int pivot) {
         int leftPointer = lowIndex;
         int rightPointer = highIndex;
 
@@ -58,14 +70,7 @@ public class QuickSort {
             swap(array, leftPointer, rightPointer);
         }
         swap(array, leftPointer, highIndex);        // here highIndex is our Pivot
-        //After above step all the numbers which are lower than pivot are on the left and higher ones are on the right of pivot
-
-        //Then we are just remaining with recursive step to left & right of pivot
-        //recursive quicksort left partition
-        quickSort(array, lowIndex, leftPointer-1);      // cause leftpointer & rightpointer is at pivot right now
-
-        //recursive quicksort right partition
-        quickSort(array, leftPointer+1, highIndex);
+        return leftPointer;
     }
 
     private static void swap(int[] array, int index1, int index2) {
